@@ -13,7 +13,8 @@
 #
 # See: https://github.com/underworldcode/underworld3/blob/main/scripts/binder_wizard.py
 
-FROM ghcr.io/underworldcode/uw3-base:-slim
+FROM ghcr.io/underworldcode/uw3-base:development-slim
 
-# Pull from main branch of underworld3
-ENV UW3_BRANCH=main
+ENV UW3_BRANCH=development
+
+RUN python -m pip install --no-cache-dir git+https://github.com/bknight1/UWDiffusion.git@main
