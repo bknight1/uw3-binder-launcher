@@ -17,4 +17,5 @@ FROM ghcr.io/underworldcode/uw3-base:development-slim
 
 ENV UW3_BRANCH=development
 
-RUN /home/jovyan/underworld3/.pixi/envs/runtime/bin/python -m pip install --no-cache-dir git+https://github.com/bknight1/UWDiffusion.git@main
+ARG UWDIFFUSION_SHA=778e725213ed2475d5751080c791d480592c3da4
+RUN /home/jovyan/underworld3/.pixi/envs/runtime/bin/python -m pip install --no-cache-dir "git+https://github.com/bknight1/UWDiffusion.git@${UWDIFFUSION_SHA}"
